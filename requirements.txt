@@ -1,0 +1,2 @@
+Pillow>=9.0.0  # Para manipulación de imágenes
+pytest>=7.0.0  # Para pruebas unitarias
