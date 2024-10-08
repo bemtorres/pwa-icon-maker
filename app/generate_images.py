@@ -49,3 +49,19 @@ def generate_icons(image_path, output_dir, sizes):
         resized_icon.save(output_path, "PNG")
         print(f"Ícono {size_name} generado y guardado en {output_path}")
 
+
+def generate_images(image_path, output_dir, sizes, prefix):
+    """Genera imágenes a partir de un archivo base para los tamaños especificados"""
+    # Cargar imagen base
+    image = Image.open(image_path)
+    
+    # Crear carpeta de salida si no existe
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    # Generar imágenes para cada tamaño
+    for name, size in sizes.items():
+        resized_image = image.resize(size, Image.LANCZOS)
+        output_path = os.path.join(output_dir, f'{prefix}-{name}.png')
+        resized_image.save(output_path)
+        print(f'Imagen generada: {output_path}')
