@@ -21,11 +21,32 @@ This Python project generates icons and splash screens for Progressive Web Apps 
    cd pwa-icon-maker
    ```
 
-2. Install the required dependencies:
+2. Create a virtual environment (optional but recommended):
+   ```bash
+   python -m venv virtualenv
+   ```
+3. Activate the virtual environment:
+   - On Windows (CMD):
+     ```bash
+     virtualenv\Scripts\activate
+     ```
+   - On Windows (PowerShell):
+     ```powershell   
+     virtualenv\Scripts\Activate.ps1
+     ```
+   - On macOS/Linux:
+     ```bash
+     source virtualenv/bin/activate
+     ```
+
+4. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-
+5. Deactivate the virtual environment when done:
+   ```bash
+   deactivate
+   ```
 ## Usage
 
 1. Place your base image (e.g., `base_image.png`) in the project root directory.
@@ -78,7 +99,8 @@ To test the script:
 1. Ensure that you have a base image (e.g., `base_image.png`) in the project root directory.
 2. Run the script:
    ```bash
-   python generate_images.py
+      python generate_images.py
+      python _test/test_generate_images.py
    ```
 
 3. Verify that the output images have been correctly generated in the `./images/icons/splash/` and `./images/icons/` directories.
